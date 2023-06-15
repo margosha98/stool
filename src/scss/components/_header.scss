@@ -1,0 +1,50 @@
+@import '../variables.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  padding: 20px 40px;
+  background-color: $blue;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    width: 200px;
+  }
+
+  &__cart {
+    display: flex;
+    align-items: center;
+    padding: 14px 14px;
+    text-align: center;
+    background-color: $orange;
+    min-width: 100px;
+    text-align: center;
+    cursor: pointer;
+    height: 50px;
+
+    border-radius: 15px;
+
+    span {
+      color: $white-text;
+      width: 600;
+    }
+
+    img {
+      width: 20px;
+      margin-right: 5px;
+    }
+
+    .button__delimiter {
+      margin-left: 14px;
+      margin-right: 14px;
+      width: 2px;
+      height: 30px;
+      background-color: $white-text;
+    }
+  }
+}

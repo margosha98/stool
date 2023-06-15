@@ -1,0 +1,25 @@
+.input__container {
+  position: relative;
+
+  .input {
+    width: 250px;
+    width: 250px;
+    padding: 5px 10px;
+    padding-left: 40px;
+    font-size: 15px;
+    border: 1px solid darkgray;
+    border-radius: 10px;
+
+    &:focus {
+      border: 2px solid darkgray;
+    }
+  }
+
+  img {
+    position: absolute;
+    width: 15px;
+    left: 15px;
+    top: 7px;
+    cursor: pointer;
+  }
+}
