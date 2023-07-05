@@ -1,8 +1,8 @@
 [
   {
     "id": 0,
-    "title": "Пыльная роза",
-    "imgUrl": "./assets/elements/roze.jpg",
+    "title": "Chick",
+    "imgUrl": "https://i.ibb.co/5s5Qq7B/3.jpg",
     "types": ["Дуб", "Клен"],
     "price": 65000,
     "category": 0,
@@ -10,17 +10,17 @@
   },
   {
     "id": 1,
-    "title": "Просто расслабься",
-    "imgUrl": "./assets/elements/soft.jpg",
+    "title": "Long Table",
+    "imgUrl": "https://i.ibb.co/SxRNdD1/table2.jpg",
     "types": ["Осина", "Клён"],
     "price": 45000,
-    "category": 0,
+    "category": 2,
     "rating": 2
   },
   {
     "id": 2,
-    "title": "Бабушкино кресло",
-    "imgUrl": "./assets/elements/stool1.jpg",
+    "title": "Firebird",
+    "imgUrl": "https://i.ibb.co/y0f44W3/4.jpg",
     "types": ["Дуб", "Клен"],
     "price": 35000,
     "category": 0,
@@ -28,8 +28,8 @@
   },
   {
     "id": 3,
-    "title": "Свежесть",
-    "imgUrl": "./assets/elements/stool2.jpg",
+    "title": "Warm Lamb",
+    "imgUrl": "https://i.ibb.co/S0c9nsW/6.jpg",
     "types": ["Дуб", "Клен"],
     "price": 6000,
     "category": 0,
@@ -37,8 +37,8 @@
   },
   {
     "id": 4,
-    "title": "Строгость",
-    "imgUrl": "./assets/elements/stool3.jpg",
+    "title": "Severity",
+    "imgUrl": "https://i.ibb.co/P9sCgwm/9.jpg",
     "types": ["Дуб", "Клен"],
     "price": 35000,
     "category": 0,
@@ -46,8 +46,8 @@
   },
   {
     "id": 5,
-    "title": "Камод",
-    "imgUrl": "./assets/elements/stool4.jpg",
+    "title": "Huge",
+    "imgUrl": "https://i.ibb.co/J3wDfMs/10.jpg",
     "types": ["Дуб", "Клен"],
     "price": 35000,
     "category": 0,
@@ -55,8 +55,80 @@
   },
   {
     "id": 6,
-    "title": "Бирюза",
-    "imgUrl": "./assets/elements/stool5.jpg",
+    "title": "Village chear",
+    "imgUrl": "https://i.ibb.co/cXXtDm5/11.jpg",
+    "types": ["Дуб", "Клен"],
+    "price": 35000,
+    "category": 0,
+    "rating": 2
+  },
+  {
+    "id": 7,
+    "title": "Huge",
+    "imgUrl": "https://i.ibb.co/J3wDfMs/10.jpg",
+    "types": ["Дуб", "Клен"],
+    "price": 35000,
+    "category": 0,
+    "rating": 2
+  },
+  {
+    "id": 8,
+    "title": "Jast Gray",
+    "imgUrl": "https://i.ibb.co/ZHcC83d/13.jpg",
+    "types": ["Дуб", "Клен"],
+    "price": 35000,
+    "category": 0,
+    "rating": 2
+  },
+  {
+    "id": 9,
+    "title": "Russian Ballet",
+    "imgUrl": "https://i.ibb.co/hKZP0yn/16.jpg",
+    "types": ["Дуб", "Клен"],
+    "price": 35000,
+    "category": 0,
+    "rating": 2
+  },
+  {
+    "id": 10,
+    "title": "Grass",
+    "imgUrl": "https://i.ibb.co/2nHrVCW/2.jpg",
+    "types": ["Дуб", "Клен"],
+    "price": 35000,
+    "category": 0,
+    "rating": 2
+  },
+  {
+    "id": 11,
+    "title": "Every Day",
+    "imgUrl": "https://i.ibb.co/JqM0xSd/22.jpg",
+    "types": ["Дуб", "Клен"],
+    "price": 35000,
+    "category": 0,
+    "rating": 2
+  },
+  {
+    "id": 12,
+    "title": "Sofa",
+    "imgUrl": "https://i.ibb.co/Xsgwppb/sofa.jpg",
+    "types": ["Дуб", "Клен"],
+    "price": 35000,
+    "category": 0,
+    "rating": 2
+  },
+  {
+    "id": 13,
+    "title": "Family Table",
+    "imgUrl": "https://i.ibb.co/K0HPyhd/table.jpg",
+    "types": ["Дуб", "Клен"],
+    "price": 35000,
+    "category": 2,
+    "rating": 2
+  },
+  {
+    "id": 14,
+    "title": "Blue Sky",
+    "imgUrl": "https://i.ibb.co/X8db1Z4/341549650-1027680975270639-901264516111714756-n.jpg",
     "types": ["Дуб", "Клен"],
     "price": 35000,
     "category": 0,
