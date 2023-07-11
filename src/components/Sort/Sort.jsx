@@ -1,23 +1,23 @@
 import React from 'react';
-import sort from '../../assets/sort.png';
 
-function Sort() {
-  const titlesOfSort = ['популярности', 'цене', 'алфавиту'];
-  const [selected, setSelected] = React.useState(0);
+function Sort({ value, onChangeSortType }) {
+  const titlesOfSort = [
+    { name: 'популярности', type: 'rating' },
+    { name: 'цене', type: 'price' },
+    { name: 'алфавиту', type: 'title' },
+  ];
+
   const [isVisiblePopup, setIsVisiblePopup] = React.useState(false);
-  let nameOfSort = titlesOfSort[selected];
-
   const onClickToSelectSort = (i) => {
-    setSelected(i);
     setIsVisiblePopup(false);
+    onChangeSortType(titlesOfSort[i]);
   };
 
   return (
     <div className="sort">
       <div className="sort__label">
-        {/* <img className="sort__img" src={sort} alt="ss" /> */}
         <b>Сортировка по:</b>
-        <span onClick={() => setIsVisiblePopup(!isVisiblePopup)}>{nameOfSort}</span>
+        <span onClick={() => setIsVisiblePopup(!isVisiblePopup)}>{value.name}</span>
       </div>
       {isVisiblePopup && (
         <div className="sort__popup">
@@ -26,8 +26,8 @@ function Sort() {
               <li
                 key={i}
                 onClick={() => onClickToSelectSort(i)}
-                className={nameOfSort === el ? 'active' : ''}>
-                {el}
+                className={value.type === el.type ? 'active' : ''}>
+                {el.name}
               </li>
             ))}
           </ul>

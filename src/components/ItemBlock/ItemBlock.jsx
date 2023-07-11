@@ -11,6 +11,7 @@ function ItemBlock({ title, imgUrl, price, types }) {
       <ul className="card__types-container">
         {types.map((type, i) => (
           <li
+            key={i}
             onClick={() => setActiveTypeIndex(i)}
             className={activeTypeIndex === i ? 'card__text  card__text_active' : 'card__text'}>
             {type}
