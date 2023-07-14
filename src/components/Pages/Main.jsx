@@ -4,19 +4,16 @@ import Sort from '../Sort/Sort';
 import ItemBlock from '../ItemBlock/ItemBlock';
 import Paginate from '../Paginate/Paginate';
 import { SearchContext } from '../../App';
+import { useSelector, useDispatch } from 'react-redux';
 
 function Main() {
   const { searchValue } = React.useContext(SearchContext);
   const [elements, setElements] = React.useState([]);
 
-  const [category, setCategory] = React.useState(0);
-  const [sortType, setSortType] = React.useState({
-    name: 'алфавиту',
-    type: 'title',
-  });
+  const { category, sort } = useSelector((state) => state.filter);
 
   let filterByCategory = category ? `category=${category}` : '';
-  let sortByType = `sortBy=${sortType.type}&order=asc`;
+  let sortByType = `sortBy=${sort.type}&order=asc`;
   let search = searchValue ? `&search=${searchValue}` : ``;
 
   const itemsPerPage = 6;
@@ -41,8 +38,8 @@ function Main() {
   return (
     <div className="container">
       <div className="content__top">
-        <Categories value={category} onChangeCategory={(i) => setCategory(i)} />
-        <Sort value={sortType} onChangeSortType={(sortType) => setSortType(sortType)} />
+        <Categories />
+        <Sort />
       </div>
 
       <div className="content__items">

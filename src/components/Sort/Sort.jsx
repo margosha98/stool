@@ -1,6 +1,11 @@
 import React from 'react';
+import { setSortType } from '../../redux/filterSlice';
+import { useSelector, useDispatch } from 'react-redux';
 
-function Sort({ value, onChangeSortType }) {
+function Sort() {
+  const dispatch = useDispatch();
+  const { sort } = useSelector((state) => state.filter);
+
   const titlesOfSort = [
     { name: 'популярности', type: 'rating' },
     { name: 'цене', type: 'price' },
@@ -10,14 +15,14 @@ function Sort({ value, onChangeSortType }) {
   const [isVisiblePopup, setIsVisiblePopup] = React.useState(false);
   const onClickToSelectSort = (i) => {
     setIsVisiblePopup(false);
-    onChangeSortType(titlesOfSort[i]);
+    dispatch(setSortType(titlesOfSort[i]));
   };
 
   return (
     <div className="sort">
       <div className="sort__label">
         <b>Сортировка по:</b>
-        <span onClick={() => setIsVisiblePopup(!isVisiblePopup)}>{value.name}</span>
+        <span onClick={() => setIsVisiblePopup(!isVisiblePopup)}>{sort.name}</span>
       </div>
       {isVisiblePopup && (
         <div className="sort__popup">
@@ -26,7 +31,7 @@ function Sort({ value, onChangeSortType }) {
               <li
                 key={i}
                 onClick={() => onClickToSelectSort(i)}
-                className={value.type === el.type ? 'active' : ''}>
+                className={sort.type === el.type ? 'active' : ''}>
                 {el.name}
               </li>
             ))}
