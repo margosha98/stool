@@ -1,31 +1,72 @@
+// Кнопка поиска текст размер 16px
+// Инпут 18px
+// Весь текст 18px
+
 .input__container {
   position: relative;
 
-  .input {
-    width: 250px;
-    width: 250px;
-    padding: 5px 10px;
-    padding-left: 40px;
-    font-size: 15px;
-    border: 1px solid darkgray;
-    border-radius: 10px;
+  button {
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    transition: 0.2s;
+    svg {
+      width: 25px;
+    }
+    span {
+      transition: 0.2s;
 
+      @media (max-width: 550px) {
+        display: none;
+      }
+    }
+  }
+
+  button:hover {
+    span {
+      transition: 0.2s;
+      font-size: larger;
+      border-bottom: 2px solid #000;
+    }
+    svg circle,
+    path {
+      stroke: #fa970c;
+    }
+  }
+
+  .input {
+    background-color: inherit;
+    width: 200px;
+    padding: 5px 5px;
+    padding-left: 10px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid black;
     &:focus {
-      border: 2px solid darkgray;
+      // border: 2px solid darkgray;
     }
   }
 
   img {
-    position: absolute;
-    width: 15px;
-    left: 15px;
-    top: 7px;
+    // position: absolute;
+    width: 25px;
+    // left: 15px;
     cursor: pointer;
   }
 
   .cancel {
-    left: 220px;
+    position: absolute;
+    right: 5px;
     top: 7px;
     width: 18px;
+    transition-duration: 0.1s;
+
+    &:hover {
+      width: 22px;
+      top: 5px;
+    }
   }
 }

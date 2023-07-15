@@ -7,13 +7,13 @@ import { Link } from 'react-router-dom';
 function Header() {
   return (
     <div className="header">
-      <Link to="/">
+      <Link className="logo__cantainer" to="/">
         <img className="header__logo" src={logo} alt="stool-logo" />
       </Link>
       <Search />
 
       <Link to="cart" className="header__cart">
-        <span>100 ₽</span>
+        <span>35000 ₽</span>
         <div className="button__delimiter"></div>
         <img src={cart} alt="cart.svg" />
         <span> 1</span>

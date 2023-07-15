@@ -3,7 +3,7 @@
   margin: 0;
   list-style: none;
   outline: none;
-  font-family: 'Nunito', Roboto, system-ui, Tahoma, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
 }
 
@@ -44,6 +44,13 @@ a {
   text-decoration: none;
 }
 
+input[type='text'] {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
 @mixin noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -52,4 +59,12 @@ a {
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Opera and Firefox */
+}
+
+button {
+  background-color: inherit;
+  padding: 0;
+  color: #000;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
 }

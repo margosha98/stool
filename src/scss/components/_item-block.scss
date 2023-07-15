@@ -1,34 +1,40 @@
 @import '../variables';
 
-$backgound-color_card: #f0eded;
+// название карточки 22px
+
+$backgound-color_card: #722509;
 
 .card {
+  font-family: 'Montserrat', sans-serif;
   margin: 10px;
   display: flex;
   width: 300px;
   flex-direction: column;
-  background-color: $backgound-color_card;
-  border-radius: 20px;
-  gap: 8px;
+  gap: 5px;
 
   &__title {
     text-align: center;
     font-size: 22px;
+    font-weight: 500;
   }
 
   &__img {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
     height: 350px;
   }
 
   &__types-container {
     justify-content: center;
     display: flex;
-    background-color: #f9f9f9;
-    border-radius: 18px;
-    flex: 10px;
     margin: 0px 10px;
+
+    .wood {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: rgb(209, 188, 158);
+      border-radius: 50%;
+      margin-right: 10px;
+    }
   }
 
   &__text {
@@ -36,21 +42,17 @@ $backgound-color_card: #f0eded;
     padding: 5px;
     flex: 1;
     cursor: pointer;
-    font-weight: 600;
-    font-size: 14px;
-    border-radius: 18px;
+    font-weight: 400;
+    font-size: 15px;
     @include noselect();
-    background-color: #f9f9f9;
 
     &_active {
-      background-color: #475554;
-      color: #fff;
-      // box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+      border-bottom: 2px solid #0cfa14;
+      color: #000;
       cursor: auto;
     }
 
     &_buy {
-      background-color: $backgound-color_card;
       font-size: 18px;
       align-self: center;
     }
@@ -63,28 +65,27 @@ $backgound-color_card: #f0eded;
     button {
       margin-left: auto;
       width: 50%;
-      font-family: 'Nunito', Roboto, system-ui, Tahoma, sans-serif;
       font-size: 18px;
-      font-weight: 500;
-      background-color: #bf501a;
-      border: none;
-      padding: 10px 13px;
-      border-radius: 18px;
+      font-weight: 400;
       cursor: pointer;
+      padding-bottom: 2px;
+
+      &:hover {
+        border-bottom: 2px solid #fa970c;
+        padding-bottom: 0px;
+      }
 
       span {
-        color: #fff;
+        color: black;
       }
       .number {
         display: inline-block;
-        color: #bf501a;
-        background-color: #fff;
-        border-radius: 50%;
+        color: #fa970c;
         padding: 5px;
         width: 30px;
         height: 30px;
         font-size: 15px;
-        font-weight: 800;
+        font-weight: 400;
         position: relative;
         left: 3px;
       }
