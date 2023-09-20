@@ -7,8 +7,6 @@ function Categories() {
   const dispatch = useDispatch();
   const category = useSelector((state) => state.filter.category);
 
-  console.log(category);
-
   return (
     <div className="categories">
       <ul>

@@ -5,6 +5,8 @@ import ItemBlock from '../ItemBlock/ItemBlock';
 import Paginate from '../Paginate/Paginate';
 import { SearchContext } from '../../App';
 import { useSelector, useDispatch } from 'react-redux';
+import axios from 'axios';
+
 
 function Main() {
   const { searchValue } = React.useContext(SearchContext);
@@ -28,11 +30,10 @@ function Main() {
   };
 
   React.useEffect(() => {
-    fetch(
+    axios.get(
       `https://641af45b9b82ded29d462047.mockapi.io/items?${filterByCategory}&${sortByType}${search}`,
     )
-      .then((response) => response.json())
-      .then((items) => setElements(items));
+    .then((resp) => setElements(resp.data));
   }, [filterByCategory, sortByType, search]);
 
   return (

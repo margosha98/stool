@@ -2,24 +2,46 @@ import React from 'react';
 import search from '../../assets/search.svg';
 import cancel from '../../assets/cancel.svg';
 import { SearchContext } from '../../App';
+import { useRef } from 'react';
+import debounce from 'lodash.debounce';
 
 function Search() {
-  const { searchValue, setSearchValue } = React.useContext(SearchContext);
-
+  const [localSearchValue, setLocalSearchValue] = React.useState('')
+  const {setSearchValue } = React.useContext(SearchContext);
   const [toogleInput, setToogleInput] = React.useState(0);
+
+  const inputRef = useRef(null);
+
+  const activeSearchInput = (value) => {
+    setToogleInput(value)
+    setTimeout(() => {
+      inputRef.current.focus();
+  }, 150)
+}
+
+let updateInput = React.useCallback(
+    debounce((str) => {
+      setSearchValue(str)
+    }, 500), []
+  )
+
+  const onChangeInput = (event) => {
+    setLocalSearchValue(event.target.value);
+    updateInput(event.target.value)
+  }
+
   return (
     <div className="input__container">
       {toogleInput ? (
         <input
-          value={searchValue}
+          value={localSearchValue}
+          ref={inputRef}
           className="input"
           placeholder="Поиск..."
-          onChange={(e) => {
-            setSearchValue(e.target.value);
-          }}
+          onChange = {onChangeInput}
         />
       ) : (
-        <button onClick={() => setToogleInput(true)}>
+        <button onClick={() => activeSearchInput(true)}>
           <svg
             width="43"
             height="47"
@@ -33,13 +55,14 @@ function Search() {
         </button>
       )}
 
-      {searchValue && (
+      {localSearchValue && (
         <img
           className="cancel"
           src={cancel}
           alt="cancel"
           onClick={() => {
             setSearchValue('');
+            setLocalSearchValue('')
             setToogleInput(false);
           }}
         />

@@ -15,7 +15,6 @@ function ItemBlock({ title, imgUrl, price, types }) {
             className={activeTypeIndex === i ? 'card__text  card__text_active' : 'card__text'}>
             <div className="wood" style={{ backgroundColor: type.color }}></div>
             {type.title}
-            {/* {console.log(types.)} */}
           </li>
         ))}
       </ul>
