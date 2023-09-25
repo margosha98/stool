@@ -1,8 +1,18 @@
 import React from 'react';
-function ItemBlock({ title, imgUrl, price, types }) {
-  const [count, setCount] = React.useState(0);
+import { useSelector, useDispatch } from 'react-redux';
+import  { addItem } from '../../redux/cartSlice.js'
 
+function ItemBlock({ id,title, imgUrl, price, types }) {
   const [activeTypeIndex, setActiveTypeIndex] = React.useState(0);
+  const [count, setCount] = React.useState(0);
+  const dispatch = useDispatch()
+
+  const item = {
+    id,
+    title,
+    imgUrl,
+    price,
+  }
   return (
     <arcticle className="card">
       <img className="card__img" src={imgUrl} alt="chear" />
@@ -20,7 +30,7 @@ function ItemBlock({ title, imgUrl, price, types }) {
       </ul>
       <div className="card__buy-container">
         <span className="card__text  card__text_buy">{price} ₽</span>
-        <button onClick={() => setCount(count + 1)} className="card__button">
+        <button onClick={() => dispatch(addItem(item))} className="card__button">
           <span>В корзину</span>
           {!!count && <span className="number">{count}</span>}
         </button>
