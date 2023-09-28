@@ -1,0 +1,131 @@
+
+.card_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    width: 700px;
+    margin: 50px auto;
+}
+
+.items_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cart-item {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+  
+    &__title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 500;
+    }
+  
+    &__img {
+      height: 250px;
+    }
+
+    &__info-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &_column {
+            flex-direction: column;
+        }
+
+    }
+}
+
+.ok {
+    width: 40px;
+    text-align: center;
+}
+
+.ok2 {
+    width: 100px;
+}
+
+.minus {
+
+    img {
+        width: 20px;
+        margin: 0 auto;
+    }
+}
+
+.trash {
+    height: 30px;
+}
+
+.button_trash {
+
+}
+
+
+.button_trash {
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    &:hover {
+        svg path, line {
+            stroke: orange;
+        }
+
+        animation: rotate-el 500ms forwards;
+    }
+    
+}
+
+@keyframes rotate-el {
+    0% {
+        transform: rotate(0deg);
+    }
+    30% {
+        transform: rotate(40deg);
+    }
+    70% {
+        transform: rotate(-40deg);
+    }
+    90% {
+        transform: rotate(0deg);
+    }
+
+}
+
+
+.pay-container {
+    border-top: 1px solid black;
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    &__info {
+        line-height: 250%;
+        font-size: 18px;
+        font-weight: 500;
+
+
+    }
+
+    &__button {
+        cursor: pointer;
+        padding: 15px;
+        font-size: 17px;
+        font-weight: 500;
+        border: 2px solid orange;
+
+    }
+}

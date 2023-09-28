@@ -44,6 +44,8 @@ body {
   }
 
   &__top {
+    position: sticky;
+    top:90px;
     padding: 40px;
     display: flex;
     align-items: center;

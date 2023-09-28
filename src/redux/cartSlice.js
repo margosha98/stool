@@ -21,11 +21,24 @@ export const cartSlice = createSlice({
       state.itemsCost = state.items.reduce((prev, current) => prev + current.count*current.price, 0)
       state.itemsCount = state.items.reduce((prev, cur) => prev + cur.count, 0)
     },
+    incrementItem: (state, action) => {
+      const findedItem = (state.items.find((el) => el.id === action.payload))
+      findedItem.count +=1
+      state.itemsCost = state.items.reduce((prev, current) => prev + current.count*current.price, 0)
+      state.itemsCount = state.items.reduce((prev, cur) => prev + cur.count, 0)
+    },
     decrementItem: (state, action) => {
-      state.sort = action.payload;
+      const findedItem = (state.items.find((el) => el.id === action.payload))
+      findedItem.count -=1
+      if (findedItem.count<1) {
+        state.items = state.items.filter(item => item.id!== action.payload)
+      }
+
+      state.itemsCost = state.items.reduce((prev, current) => prev + current.count*current.price, 0)
+      state.itemsCount = state.items.reduce((prev, cur) => prev + cur.count, 0)
     },
     deleteItem: (state, action) => {
-      state.items.filter((item) => item.id!==action.payload)
+      state.items = state.items.filter((item) => item.id!==action.payload)
     },
     clearCart: (state, action) => {
       state.items = []
@@ -35,6 +48,6 @@ export const cartSlice = createSlice({
   },
 });
 
-export const { addItem, setSortType } = cartSlice.actions;
+export const { addItem, setSortType, incrementItem, decrementItem, deleteItem } = cartSlice.actions;
 
 export default cartSlice.reducer;
